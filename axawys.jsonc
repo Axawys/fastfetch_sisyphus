@@ -9,89 +9,126 @@
       "3": "#c98e3b"
     },
     "padding": {
-      "top": 0,
+      "top": 1,
       "right": 2,
       "left": 2
     }
   },
   "modules": [
-    "title",
-    "separator",
+    {
+      "type": "custom",
+      "key": "┌─────── Software ──────────────"
+    },
     {
       "type": "os",
       "format": "{pretty-name}",
-      "key": "OS"
+      "key": "├OS"
     },
     {
       "type": "kernel",
       "format": "{release}",
-      "key": "Kern"
+      "key": "├Kern"
     },
     {
       "type": "packages",
-      "key": "Pkgs"
+      "key": "├Pkgs"
     },
     {
       "type": "terminal",
-      "key": "Term"
+      "key": "├Term"
     },
     {
       "type": "shell",
-      "key": "Sh"
+      "key": "└Sh"
+    },
+    {
+      "type": "custom",
+      "key": "┌───────── Time ────────────────"
     },
     {
       "type": "uptime",
-      "key": "Up"
+      "key": "├Up"
     },
     {
       "type": "command",
-      "key": "Age",
+      "key": "├Age",
       "text": "birth_install=$(stat -c %W /); current=$(date +%s); time_progression=$((current - birth_install)); days_difference=$((time_progression / 86400)); echo $days_difference days"
     },
     {
       "type": "command",
-      "key": "Backup",
+      "key": "└Backup",
       "text": "latest=$(ls -1 /timeshift/snapshots 2>/dev/null | sort | tail -n 1); if [ -n \"$latest\" ]; then echo \"$latest\"; else echo \"No backups\"; fi"
     },
-    "separator",
-    "de",
+    {
+      "type": "custom",
+      "key": "┌──────── Theming ──────────────"
+    },
+    {
+      "type": "de",
+      "key": "├DE"
+    },
     {
       "type": "wm",
+      "key": "├WM",
       "format": "{pretty-name}, {protocol-name}"
     },
     {
       "type": "lm",
+      "key": "├LM",
       "format": "{service} {version}"
     },
-    "theme",
-    "icons",
-    "font",
-    "separator",
+    {
+      "type": "theme",
+      "key": "├Theme"
+    },
+    {
+      "type": "icons",
+      "key": "├Icons"
+    },
+    {
+      "type": "font",
+      "key": "├Font"
+    },
+    {
+      "type": "colors",
+      "key": "└",
+      "symbol": "circle"
+    },
+    {
+      "type": "custom",
+      "key": "┌──────── Hardware ──────────────"
+    },
     {
       "type": "host",
+      "key": "├Host",
       "format": "{version}"
     },
     {
       "type": "display",
       "format": "{width}x{height}, {inch}\", {refresh-rate}Hz, {ppi}ppi",
-      "key": "Disp"
+      "key": "├Disp"
     },
     {
       "type": "cpu",
+      "key": "├CPU",
       "format": "{name}, {freq-max}"
     },
     {
       "type": "gpu",
+      "key": "├GPU",
       "format": "{vendor} {name}"
     },
-        "board",
     {
-      "type": "memory",
-      "key": "RAM"
+      "type": "board",
+      "key": "├MBoard"
     },
     {
-      "type": "colors",
-      "symbol": "circle"
+      "type": "memory",
+      "key": "└RAM"
     }
   ]
 }
+
+// добавить: 
+// температуры
+// раздел me
