@@ -1,0 +1,1 @@
+# fastfetch_alt_regular
