@@ -1,3 +1,3 @@
 # fastfetch_sisyphus
 
-![preview](https://github.com/user-attachments/assets/96360070-73ad-4f21-ad6a-542fb68e68ac)
+![preview](https://github.com/user-attachments/assets/798a9c5a-30ef-4546-aec0-71d4de1928b3)
