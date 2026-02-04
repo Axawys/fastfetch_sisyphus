@@ -48,6 +48,11 @@
       "key": "Age",
       "text": "birth_install=$(stat -c %W /); current=$(date +%s); time_progression=$((current - birth_install)); days_difference=$((time_progression / 86400)); echo $days_difference days"
     },
+    {
+      "type": "command",
+      "key": "Backup",
+      "text": "latest=$(ls -1 /timeshift/snapshots 2>/dev/null | sort | tail -n 1); if [ -n \"$latest\" ]; then echo \"$latest\"; else echo \"No backups\"; fi"
+    },
     "separator",
     "de",
     {
@@ -83,11 +88,6 @@
     {
       "type": "memory",
       "key": "RAM"
-    },
-    {
-      "type": "command",
-      "key": "Backup",
-      "text": "latest=$(ls -1 /timeshift/snapshots 2>/dev/null | sort | tail -n 1); if [ -n \"$latest\" ]; then echo \"$latest\"; else echo \"No backups\"; fi"
     },
     {
       "type": "colors",
