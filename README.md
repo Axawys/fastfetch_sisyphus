@@ -1,1 +1,1 @@
-# fastfetch_alt_regular
+# fastfetch_sisyphus
