@@ -4,8 +4,8 @@
     "type": "auto",
     "source": "~/Documents/fastfetch_sisyphus/sisyphus.txt",
     "color": {
-      "1": "white",
-      "2": "yellow",
+      "1": "#d8d8d8",
+      "2": "#f4bf75",
       "3": "#c98e3b"
     },
     "padding": {
@@ -14,15 +14,71 @@
       "left": 2
     }
   },
+  "display": {
+      "color": {
+        "keys": "#f4bf75",
+        "title": "white",
+        "separator": "white"
+      },
+      "separator": " → "
+    },
   "modules": [
     {
       "type": "custom",
-      "key": "┌─────── Software ──────────────"
+      "format": "{##f4bf75}┌─────────{#}{##c98e3b} Hardware {#}{##f4bf75}────────────┐",
+      "outputColor": "#f4bf75"
+    },
+    {
+      "type": "host",
+      "key": "├Host",
+      "format": "{name}"
+    },
+    {
+      "type": "display",
+      "format": "{width}x{height}, {inch}\", {refresh-rate}Hz, {ppi}ppi",
+      "key": "├Disp"
+    },
+    {
+      "type": "cpu",
+      "key": "├CPU ",
+      "format": "{name}, {freq-max}"
+    },
+    {
+      "type": "gpu",
+      "key": "├GPU ",
+      "format": "{name}"
+    },
+    {
+      "type": "memory",
+      "key": "├RAM "
+    },
+    {
+      "type": "disk",
+      "key": "├Disk",
+      "format": "{size-used}/{size-total}",
+      "folders": "/",
+      "percent": {
+        "type": 2
+      }
+    },
+    {
+      "type": "disk",
+      "key": "└─   ",
+      "format": "{size-percentage-bar}",
+      "folders": "/",
+      "percent": {
+        "type": 2
+      }
+    },
+    {
+      "type": "custom",
+      "format": "{##f4bf75}┌─────────{#}{##c98e3b} Software {#}{##f4bf75}────────────┐",
+      "outputColor": "blue"
     },
     {
       "type": "os",
       "format": "{pretty-name}",
-      "key": "├OS"
+      "key": "├OS  "
     },
     {
       "type": "kernel",
@@ -39,29 +95,12 @@
     },
     {
       "type": "shell",
-      "key": "└Sh"
+      "key": "└Sh  "
     },
     {
       "type": "custom",
-      "key": "┌───────── Time ────────────────"
-    },
-    {
-      "type": "uptime",
-      "key": "├Up"
-    },
-    {
-      "type": "command",
-      "key": "├Age",
-      "text": "birth_install=$(stat -c %W /); current=$(date +%s); time_progression=$((current - birth_install)); days_difference=$((time_progression / 86400)); echo $days_difference days"
-    },
-    {
-      "type": "command",
-      "key": "└Backup",
-      "text": "latest=$(ls -1 /timeshift/snapshots 2>/dev/null | sort | tail -n 1); if [ -n \"$latest\" ]; then echo \"$latest\"; else echo \"No backups\"; fi"
-    },
-    {
-      "type": "custom",
-      "key": "┌──────── Theming ──────────────"
+      "format": "{##f4bf75}┌──────────{#}{##c98e3b} Theming {#}{##f4bf75}────────────┐",
+      "outputColor": "blue"
     },
     {
       "type": "de",
@@ -78,16 +117,12 @@
       "format": "{service} {version}"
     },
     {
-      "type": "theme",
-      "key": "├Theme"
+      "type": "terminalfont",
+      "key": "├TmFont"
     },
     {
       "type": "icons",
       "key": "├Icons"
-    },
-    {
-      "type": "font",
-      "key": "├Font"
     },
     {
       "type": "colors",
@@ -96,39 +131,45 @@
     },
     {
       "type": "custom",
-      "key": "┌──────── Hardware ──────────────"
+      "format": "{##f4bf75}┌────────────{#}{##c98e3b} Time {#}{##f4bf75}─────────────┐",
+      "outputColor": "blue"
     },
     {
-      "type": "host",
-      "key": "├Host",
-      "format": "{version}"
+      "type": "uptime",
+      "key": "├Up "
     },
     {
-      "type": "display",
-      "format": "{width}x{height}, {inch}\", {refresh-rate}Hz, {ppi}ppi",
-      "key": "├Disp"
+      "type": "disk",
+      "key": "├Age",
+      "folders": "/",
+      "format": "{days} days"
     },
     {
-      "type": "cpu",
-      "key": "├CPU",
-      "format": "{name}, {freq-max}"
+      "type": "command",
+      "key": "└Backup",
+      "text": "latest=$(ls -1 /timeshift/snapshots 2>/dev/null | sort | tail -n 1); if [ -n \"$latest\" ]; then echo \"$latest\"; else echo \"No saves. Hardcore mode \"; fi"
+    },
+    "break",
+    {
+      "type": "users",
+      "key": " ",
+      "format": "Hi, I'm {##f4bf75}{name}"
     },
     {
-      "type": "gpu",
-      "key": "├GPU",
-      "format": "{vendor} {name}"
+      "type": "os",
+      "format": "Btw, I've been using {##f4bf75}{pretty-name}",
+      "key": " "
     },
     {
-      "type": "board",
-      "key": "├MBoard"
+      "type": "de",
+      "format": "with {##f4bf75}{pretty-name}",
+      "key": " "
     },
     {
-      "type": "memory",
-      "key": "└RAM"
+      "type": "disk",
+      "folders": "/",
+      "key": " ",
+      "format": "for {##f4bf75}{days} {##fcfcfc}days"
     }
   ]
 }
-
-// добавить: 
-// температуры
-// раздел me
