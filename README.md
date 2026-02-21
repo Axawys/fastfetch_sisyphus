@@ -1,3 +1,3 @@
 # fastfetch_sisyphus
 
-![preview](https://github.com/user-attachments/assets/798a9c5a-30ef-4546-aec0-71d4de1928b3)
+<img width="758" height="557" alt="Screenshot From 2026-02-22 02-41-08" src="https://github.com/user-attachments/assets/2c08e038-53f9-48e0-9fe8-711a47e545ee" />
